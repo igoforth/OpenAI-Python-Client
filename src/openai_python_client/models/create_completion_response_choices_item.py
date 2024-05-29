@@ -89,7 +89,11 @@ class CreateCompletionResponseChoicesItem:
                 pass
             return cast(Union["CreateCompletionResponseChoicesItemLogprobsType0", None], data)
 
-        logprobs = _parse_logprobs(d.pop("logprobs"))
+        # for llama.cpp compatibility
+        try:
+            logprobs = _parse_logprobs(d.pop("logprobs"))
+        except TypeError:
+            logprobs = None
 
         text = d.pop("text")
 

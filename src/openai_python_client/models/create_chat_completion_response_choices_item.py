@@ -95,7 +95,11 @@ class CreateChatCompletionResponseChoicesItem:
                 pass
             return cast(Union["CreateChatCompletionResponseChoicesItemLogprobsType0", None], data)
 
-        logprobs = _parse_logprobs(d.pop("logprobs"))
+        # for llama.cpp compatibility
+        try:
+            logprobs = _parse_logprobs(d.pop("logprobs"))
+        except TypeError:
+            logprobs = None
 
         create_chat_completion_response_choices_item = cls(
             finish_reason=finish_reason,

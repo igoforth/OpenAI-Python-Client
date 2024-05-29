@@ -1,6 +1,6 @@
 [project]
 name = "OpenAI-Python-Client"
-version = "0.2.2"
+version = "0.2.3"
 description = "A pure-python implementation built from OpenAPI-Python-Client Generator https://github.com/openapi-generators/openapi-python-client and OpenAI's published OpenAPI spec https://github.com/openai/openai-openapi"
 authors = [
     {name = "Ian Goforth", email = "ian.goforth@gmail.com"},

@@ -92,7 +92,7 @@ class CreateCompletionResponseChoicesItem:
         # for llama.cpp compatibility
         try:
             logprobs = _parse_logprobs(d.pop("logprobs"))
-        except TypeError:
+        except KeyError:
             logprobs = None
 
         text = d.pop("text")

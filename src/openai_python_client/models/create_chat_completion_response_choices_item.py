@@ -98,7 +98,7 @@ class CreateChatCompletionResponseChoicesItem:
         # for llama.cpp compatibility
         try:
             logprobs = _parse_logprobs(d.pop("logprobs"))
-        except TypeError:
+        except KeyError:
             logprobs = None
 
         create_chat_completion_response_choices_item = cls(
